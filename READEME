@@ -1,5 +1,0 @@
-This is a work in progress All-In-One Calculator.
-It is meant to be able to handle anything from basic arithmetic to solving algrebraic equations and matrix calculations.
-
-TODO:
-Disect input string equation into individual operations.
