@@ -21,6 +21,10 @@ int main(int argc, char *argv[]) {
 	char equation[MAX_LEN];
 	char tokens[MAX_LEN][MAX_LEN];
 
+	// initialize token array to '\0'
+	for(int i=0; i<MAX_LEN; i++)
+		tokens[i][0] = '\0';
+
 	printf("Input String:\n");
 	fgets(equation, MAX_LEN, stdin);
 
