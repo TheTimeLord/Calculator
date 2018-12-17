@@ -17,7 +17,39 @@ void intro() {
 	return;
 }
 
-void break_equation(char *eq, char **token) {
+void break_equation(char *eq, char **tokens) {
+	// i = equation index
+	// j = row index
+	// k = col index
+	int i=0, k=0, j=0;
+	while( i<MAX_LEN ) {
+		// if character is NaN
+		if( eq[i] < 0x30 || eq[i] > 0x39 )
+		{
+			// if the first char is NaN, put it in the first index and move on
+			if( i==0 ) {
+				tokens[j][k] = eq[i];
+			}
+			else {
+				// if the previous char was a #, terminate the string and move on
+				if( k!=0 ) {
+					tokens[j][k] = '\0';
+					j++;
+				}
+				k = 0;
+				tokens[j][k] = eq[i];
+			}
+			j++;
+		}
+		else {
+			tokens[j][k] = eq[i];
+			k++;
+		}
+		if(eq[i] == '\0') {
+			tokens[j][k] = '\0';
+			break;
+		}
+		i++;
 	return;
 }
 
@@ -31,7 +63,7 @@ int main(int argc, char *argv[]) {
 
 	printf("Input String:\n");
 	fgets(equation, MAX_LEN, stdin);
-
+/*
 	// i = equation index
 	// j = row index
 	// k = col index
@@ -65,7 +97,7 @@ int main(int argc, char *argv[]) {
 		}
 		i++;
 	}
-	
+*/	
 	i=0;
 	while( tokens[i][0] != '\0' && tokens[i][0] != '\n' && i<MAX_LEN ) {
 		printf("%d: %s\n", i, tokens[i]);
