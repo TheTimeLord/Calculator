@@ -17,6 +17,10 @@ void intro() {
 	return;
 }
 
+void break_equation(char *eq, char **token) {
+	return;
+}
+
 int main(int argc, char *argv[]) {
 	char equation[MAX_LEN];
 	char tokens[MAX_LEN][MAX_LEN];
