@@ -1,6 +1,6 @@
 SOURCES	= calculator.c pemdas.c
 OBJECTS	= calculator.o pemdas.o
-HEADERS = pemdas.h
+HEADERS = calculator.h pemdas.h
 COMPILE	= gcc -c -Wall -w
 LINK	= gcc -o
 
