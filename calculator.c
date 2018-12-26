@@ -91,10 +91,8 @@ int main(int argc, char *argv[]) {
 	break_equation(equation, tokens);
 	print_eq(tokens);
 
-	int i=0;
-
 	// PEMDAS TESTING
-	pemdas();
+	pemdas(tokens);
 
 	return 0;
 }

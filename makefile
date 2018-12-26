@@ -1,7 +1,7 @@
 SOURCES	= calculator.c pemdas.c
 OBJECTS	= calculator.o pemdas.o
 HEADERS = calculator.h pemdas.h
-COMPILE	= gcc -c -Wall -w
+COMPILE	= gcc -c -Wall -std=c99 -w
 LINK	= gcc -o
 
 calculator : $(OBJECTS)
