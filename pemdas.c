@@ -37,12 +37,14 @@ double pemdas(char token[MAX_LEN][MAX_LEN]) {
 		// search the token array for the current operations and their position
 		while( token[k][0] != '\0' && token[k][0] != '\n' && k<MAX_LEN ) {
 			// TODO: Use a Queue to do the operations
-			if(token[k][0] == operation)
-				j++;
+			if(token[k][0] == operation) {
+                            printf("%c ", operation);
+                            j++;
+                        }
 			k++;
-		}
+	        }
 	}
 
-	printf("%d operations\n", j);
+	printf("\n%d operations\n", j);
 	return 0.0;
 }
