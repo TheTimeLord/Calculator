@@ -8,3 +8,7 @@ TODO:
 BUGS:
 - input string will read multiple '.' in same token
 	- ex: ("2.1.4" is one token)
+- print_num()
+	- when reading "." as a double, it equals 0.0
+	- but when printing the double array, it is not supposed to print indices with value 0
+		- it does print the index anyway

@@ -85,12 +85,22 @@ void print_eq(char token[MAX_LEN][MAX_LEN]) {
  ******************************************************************/
 
 void make_num(char token[MAX_LEN][MAX_LEN], double num[MAX_LEN]) {
+	double n;
+	for(int i=0; i<MAX_LEN; i++) {
+		if( (token[i][0] >= 0x30 && token[i][0] <= 0x39) || token[i][0] == 0x2e ) {
+			sscanf(token[i], "%lf", &n);
+//			printf("%lf	", n);
+			num[i] = n;
+		}
+	}
 	return;
 }
 
 void print_num(double num[MAX_LEN]) {
-	for(int i=0; i<MAX_LEN; i++)
-		printf("%d: %lf\n", i, num[i]);
+	for(int i=0; i<MAX_LEN; i++) {
+		if( num[i] != (double) 0.0)
+			printf("%d: %lf\n", i, num[i]);
+	}
 	return;
 }
 
@@ -108,6 +118,9 @@ int main(int argc, char *argv[]) {
 
 	break_equation(equation, tokens);
 	print_eq(tokens);
+	
+	make_num(tokens, num);
+	print_num(num);
 
 	// PEMDAS TESTING
 	pemdas(tokens, num);
