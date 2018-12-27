@@ -4,3 +4,7 @@ It is meant to be able to handle anything from basic arithmetic to solving algre
 TODO:
 - Translate numbers in given string equation into doubles to perform operations on.
 - Perform basic operations according to Order of Operations (PEMDAS)
+
+BUGS:
+- input string will read multiple '.' in same token
+	- ex: ("2.1.4" is one token)

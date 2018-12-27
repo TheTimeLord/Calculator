@@ -7,7 +7,7 @@
 #include "calculator.h"
 #include "pemdas.h"
 
-double pemdas(char token[MAX_LEN][MAX_LEN]) {
+double pemdas(char token[MAX_LEN][MAX_LEN], double num[MAX_LEN]) {
 	char operation;
 	int i,k,j=0;
 	// for each operation in PEMDAS

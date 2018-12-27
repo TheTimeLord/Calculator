@@ -38,7 +38,7 @@ void break_equation(char *eq, char tokens[MAX_LEN][MAX_LEN]) {
 	int i=0, k=0, j=0;
 	while( i<MAX_LEN ) {
 		// if character is NaN
-		if( eq[i] < 0x30 || eq[i] > 0x39 )
+		if( (eq[i] < 0x30 || eq[i] > 0x39) && eq[i] != 0x2e )
 		{
 			// if the first char is NaN, put it in the first index and move on
 			if( i==0 ) {
@@ -77,9 +77,27 @@ void print_eq(char token[MAX_LEN][MAX_LEN]) {
 	return;
 }
 
+/******************************************************************
+ * make_num()
+ * 	- takes the string array of the equation and places all
+ * 	  numbers into a parallel array of doubles in the same indices
+ *
+ ******************************************************************/
+
+void make_num(char token[MAX_LEN][MAX_LEN], double num[MAX_LEN]) {
+	return;
+}
+
+void print_num(double num[MAX_LEN]) {
+	for(int i=0; i<MAX_LEN; i++)
+		printf("%d: %lf\n", i, num[i]);
+	return;
+}
+
 int main(int argc, char *argv[]) {
-	char equation[MAX_LEN];
-	char tokens[MAX_LEN][MAX_LEN];
+	char	equation[MAX_LEN];
+	char	tokens[MAX_LEN][MAX_LEN];
+	double	num[MAX_LEN];
 
 	// initialize token array to '\0'
 	for(int i=0; i<MAX_LEN; i++)
@@ -92,7 +110,7 @@ int main(int argc, char *argv[]) {
 	print_eq(tokens);
 
 	// PEMDAS TESTING
-	pemdas(tokens);
+	pemdas(tokens, num);
 
 	return 0;
 }
