@@ -120,10 +120,11 @@ int main(int argc, char *argv[]) {
 	print_eq(tokens);
 	
 	make_num(tokens, num);
-	print_num(num);
 
 	// PEMDAS TESTING
 	pemdas(tokens, num);
+
+        print_num(num);
 
 	return 0;
 }

@@ -5,7 +5,7 @@ COMPILE	= gcc -c -Wall -std=c99 -w
 LINK	= gcc -o
 
 calculator : $(OBJECTS)
-	$(LINK) Calculator $(OBJECTS)
+	$(LINK) Calculator $(OBJECTS) -lm
 
 calculator.o : $(SOURCES) $(HEADERS)
 	$(COMPILE) calculator.c
