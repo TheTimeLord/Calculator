@@ -40,21 +40,24 @@ void break_equation(char *eq, char tokens[MAX_LEN][MAX_LEN]) {
 		// if character is NaN
 		if( (eq[i] < 0x30 || eq[i] > 0x39) && eq[i] != 0x2e )
 		{
-			// if the first char is NaN, put it in the first index and move on
-			if( i==0 ) {
-				tokens[j][k] = eq[i];
-			}
-			else {
-				// if the previous char was a #, terminate the string and move on
-				if( k!=0 ) {
-					tokens[j][k] = '\0';
-					j++;
-				}
-				k = 0;
-				tokens[j][k] = eq[i];
-			}
-			j++;
+                    // TODO: exception for '-' negative numbers. use negative if there is an operation before '-', but not ')'
+
+		    // if the first char is NaN, put it in the first index and move on
+		    if( i==0 ) {
+	    		tokens[j][k] = eq[i];
+    	        	}
+                    else {
+	    	        // if the previous char was a #, terminate the string and move on
+		    	if( k!=0 ) {
+		            tokens[j][k] = '\0';
+			    j++;
+		        }
+	    		k = 0;
+    			tokens[j][k] = eq[i];
+	            }
+        		j++;
 		}
+                // if character is a #
 		else {
 			tokens[j][k] = eq[i];
 			k++;
