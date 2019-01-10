@@ -14,7 +14,7 @@ double pemdas(char token[MAX_LEN][MAX_LEN], double num[MAX_LEN]) {
 	char operation;
 	int i,k;
         double a,b;
-        double temp;
+        double temp, result;
 	// for each operation in PEMDAS
 	for(i=0; i<6; i++) {
 		switch(i) {
@@ -81,10 +81,11 @@ double pemdas(char token[MAX_LEN][MAX_LEN], double num[MAX_LEN]) {
                                     num[k+1] = temp;
                                     break;
                             }
+                            result = temp;
                         }
 			k++;
 	        }
 	}
-
+        printf("result: %lf\n", result);
 	return 0.0;
 }
